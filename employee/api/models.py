@@ -27,6 +27,7 @@ class Emp(models.Model):
     bonus = models.IntegerField(default=0) 
     role = models.ForeignKey(Role, on_delete=models.CASCADE)
     phoneNo = models.IntegerField(default=0)        
+    email = models.EmailField(max_length=100, default='example@example.com')
     joinDate = models.DateField()      
 
     def __str__(self):
