@@ -3,6 +3,15 @@
 The Employee Management System is a web-based solution for efficient HR administration. It simplifies tasks like adding, updating, and removing employee records, managing departments and roles, and tracking essential details. With user-friendly interfaces, it streamlines data entry and retrieval, offering HR professionals a centralized platform for effective employee management.
 An employee management system built with Django, providing functionalities to add, view, remove, and filter employees.
 
+## Tech Stacks Used
+
+- **Django**: A high-level Python web framework that encourages rapid development and clean, pragmatic design.
+- **Bootstrap**: A popular front-end framework for building responsive and stylish web pages, eliminating the need for custom JavaScript.
+- **SQLite**: A lightweight, file-based relational database management system used for development.
+- **HTML and CSS**: Standard web technologies for structuring and styling web pages.
+
+
+
 ## Features
 
 - **View All Employees:** Explore the complete roster and view details of all employees.
