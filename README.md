@@ -45,3 +45,10 @@ Visit http://127.0.0.1:8000/ in your browser to access the application.
 
 
 
+## Contributing
+
+Contributions are welcome! Feel free to open issues or submit pull requests.
+
+## License
+
+This project is licensed under the Apache License.
