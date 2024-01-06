@@ -20,7 +20,7 @@ An employee management system built with Django, providing functionalities to ad
 To run this project locally, clone the repository and install dependencies:
 
 ```bash
-git clone https://github.com/your-username/employee-management-system.git
+git clone https://github.com/akshat-o5/employee-management-system.git
 cd employee-management-system
 pip install -r requirements.txt
 ```
@@ -40,5 +40,8 @@ To run the development server, execute the following commands:
 ```bash
 python manage.py runserver
 ```
+Visit http://127.0.0.1:8000/ in your browser to access the application.
+
+
 
 
