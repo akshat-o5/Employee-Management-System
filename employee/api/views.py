@@ -2,6 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from .models import Emp, Role, Dept
 from datetime import datetime
+from django.db.models import Q
 
 # Create your views here.
 
@@ -149,5 +150,41 @@ def remove_emp(request, emp_id=0):
 
 
 
+
 def filter_emp(request):
-    return render(request, 'filter_emp.html')
+    if request.method == 'POST':
+        # Retrieve data from the form
+        fname = request.POST.get('fname', '')
+        lname = request.POST.get('lname', '')
+        role_id_str = request.POST.get('role', '')
+
+        # Check if role_id_str is not empty before converting to int
+        role_id = int(role_id_str) if role_id_str else None
+
+        # Build a Q object for filtering
+        filter_conditions = Q()
+
+        if fname:
+            filter_conditions &= Q(fname__icontains=fname)
+
+        if lname:
+            filter_conditions &= Q(lname__icontains=lname)
+
+        if role_id is not None:
+            filter_conditions &= Q(role_id=role_id)
+
+        # Apply filtering
+        emps = Emp.objects.filter(filter_conditions)
+
+        context = {
+            'emps': emps,
+            'fname': fname,
+            'lname': lname,
+            'selected_role_id': role_id,
+            'roles': Role.objects.all(),  # Include all roles for the dropdown
+        }
+
+        return render(request, 'all_emp.html', context)
+
+    # If not a POST request, render the form
+    return render(request, 'filter_emp.html', {'roles': Role.objects.all()})

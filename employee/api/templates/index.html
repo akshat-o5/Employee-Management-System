@@ -7,21 +7,80 @@
     
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <style>
+        body {
+            background-color: #000000; /* Set a black background color */
+            color: #ffffff; /* Set text color to white */
+            padding-top: 50px;
+        }
+
+        .container {
+            margin-top: 20px;
+        }
+
+        .card {
+            background-color: #111111; /* Set a dark background color for cards */
+            color: #ffffff; /* Set text color to white */
+            margin-bottom: 20px; /* Add margin between cards */
+        }
+
+        .card-title, .card-text {
+            color: #007bff; /* Set a color for card titles and text */
+        }
+
+        .btn-primary {
+            background-color: #28a745; /* Set a background color for buttons */
+            border-color: #28a745; /* Set a border color for buttons */
+        }
+    </style>
 </head>
 <body>
 
     <div class="container">
-        <h1> Office Employee Management System </h1>
+        <h1 style="color: #dc3545;">Employee Management System</h1>
         <hr>
-        <br>
-        <a class="btn btn-primary" href="/all_emp" role="button">View  All Employees</a>
-        <br>
-        <a class="btn btn-primary" href="/add_emp" role="button">Add an  Employees</a>
-        <br>
-        <a class="btn btn-primary" href="/remove_emp" role="button">Remove an Employees</a>
-        <br>
-        <a class="btn btn-primary" href="/filter_emp" role="button">Filter Employee Details</a>
-        <br>
+        <div class="row">
+            <div class="col-sm-6 mb-3 mb-sm-0">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">View all Employee</h5>
+                        <p class="card-text">"Explore the complete roster! Click here to view all employees and their details effortlessly."</p>
+                        <a href="/all_emp" class="btn btn-primary">Go</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Add an Employee</h5>
+                        <p class="card-text">"Ready to expand your team? Click here to add a new member and enhance your workforce in just a few clicks!"</p>
+                        <a href="/add_emp" class="btn btn-primary">Go</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6 mb-3 mb-sm-0">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Remove an Employee</h5>
+                        <p class="card-text">"Need to trim your team? Remove an employee with ease. Click here to streamline your workforce."</p>
+                        <a href="/remove_emp" class="btn btn-primary">Go</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Filter Employees</h5>
+                        <p class="card-text">"Looking for specific team members? Filter employees by name and role. Click here to find the right match!"</p>
+                        <a href="/filter_emp" class="btn btn-primary">Go</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Bootstrap JS and Popper.js -->
