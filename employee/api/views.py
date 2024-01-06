@@ -133,8 +133,19 @@ def add_emp(request):
 
 
 
-def remove_emp(request):
-    return render(request, 'remove_emp.html')
+def remove_emp(request, emp_id=0):
+    if emp_id:
+        try:
+            removed = Emp.objects.get(id=emp_id)
+            removed.delete()
+            return HttpResponse("Employee Removed Successfully")
+        except:
+            return HttpResponse("Select a valid Employee")
+    emps = Emp.objects.all()
+    context = {
+        'emps':emps
+    }
+    return render(request, 'remove_emp.html', context)
 
 
 
