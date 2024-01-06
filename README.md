@@ -23,7 +23,7 @@ To run this project locally, clone the repository and install dependencies:
 git clone https://github.com/your-username/employee-management-system.git
 cd employee-management-system
 pip install -r requirements.txt
-
+```
 
 ## Apply Database Migrations
 
@@ -31,3 +31,4 @@ Apply database migrations to set up the required database:
 
 ```bash
 python manage.py migrate
+```
