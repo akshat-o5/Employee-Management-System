@@ -7,21 +7,54 @@
     
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+
+    <style>
+        body {
+            background-color: #000000; /* Set a black background color */
+            color: #ffffff; /* Set text color to white */
+            padding-top: 50px;
+        }
+
+        h1 {
+            color: #dc3545; /* Set heading color */
+            text-align: center; /* Center align the heading */
+        }
+
+        th, td {
+            color: #ffffff; /* Set text color to white */
+        }
+
+        .container {
+            margin-top: 20px;
+        }
+
+        table {
+            background-color: #111111; /* Set a dark background color for the table */
+            color: #ffffff; /* Set text color to white */
+        }
+
+        .btn-primary {
+            background-color: #28a745; /* Set a background color for buttons */
+            border-color: #28a745; /* Set a border color for buttons */
+        }
+    </style>
+
+
 </head>
 <body>
 
     <div class="container mt-5">
-        <h1 class="mb-4">Remove Employee</h1>
+        <h1 class="mb-4" style="color: #dc3545;">Remove Employee</h1>
 
         <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button class="btn btn-danger dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Choose Employee to be Removed
             </button>
             <div class="dropdown-menu">
-            {% for emps in emps %}
-                <li><a class="dropdown-item" href="remove_emp/{{emps.id}}">{{emps.fname}} {{emps.lname}}</a></li>
+            {% for emp in emps %}
+                <a class="dropdown-item" href="remove_emp/{{ emp.id }}" style="color: #fff; background-color: #343a40;">{{ emp.fname }} {{ emp.lname }}</a>
             {% endfor %}
-                
             </div>
         </div>
     </div>

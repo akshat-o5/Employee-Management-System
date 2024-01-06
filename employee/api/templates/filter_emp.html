@@ -1,50 +1,3 @@
-{% comment %} <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Filter Employee</title>
-    
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-</head>
-<body>
-
-    <div class="container mt-5">
-        <h1 class="mb-4">Filter Employee</h1>
-
-        <div class="row">
-            <div class="col-md-6">
-                <p>Filter Employee</p>
-            </div>
-            
-        </div>
-    </div>
-
-    <!-- Bootstrap JS and Popper.js -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-</body>
-</html> {% endcomment %}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,26 +8,69 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
+
+    <style>
+        body {
+            background-color: #000000; /* Set a black background color */
+            color: #ffffff; /* Set text color to white */
+            padding-top: 50px;
+        }
+
+        h1 {
+            color: #dc3545; /* Set heading color */
+            text-align: center; /* Center align the heading */
+        }
+
+        th, td {
+            color: #ffffff; /* Set text color to white */
+        }
+
+        .container {
+            margin-top: 20px;
+        }
+
+        table {
+            background-color: #111111; /* Set a dark background color for the table */
+            color: #ffffff; /* Set text color to white */
+        }
+
+        .btn-primary {
+            background-color: #28a745; /* Set a background color for buttons */
+            border-color: #28a745; /* Set a border color for buttons */
+        }
+    </style>
+
+
 <body>
 
     <div class="container mt-5">
         <h1 class="mb-4">Filter Employee</h1>
 
         <form method="post" action="/filter_emp">
-    {% csrf_token %}
-    <label for="fname">First Name</label>
-    <input type="text" name="fname" id="fname" value="{{ fname }}"><br>
-    <label for="lname">Last Name</label>
-    <input type="text" name="lname" id="lname" value="{{ lname }}"><br>
-    <label for="role">Role</label>
-    <select name="role" id="role">
-        <option value="" {% if not selected_role_id %}selected{% endif %}>All Roles</option>
-        {% for role in roles %}
-            <option value="{{ role.id }}" {% if selected_role_id == role.id %}selected{% endif %}>{{ role.name }}</option>
-        {% endfor %}
-    </select><br>
-    <button type="submit">Filter</button>
-</form>
+            {% csrf_token %}
+            
+            <div class="form-group">
+                <label for="fname">First Name</label>
+                <input type="text" name="fname" id="fname" class="form-control" value="{{ fname }}">
+            </div>
+
+            <div class="form-group">
+                <label for="lname">Last Name</label>
+                <input type="text" name="lname" id="lname" class="form-control" value="{{ lname }}">
+            </div>
+
+            <div class="form-group">
+                <label for="role">Role</label>
+                <select name="role" id="role" class="form-control">
+                    <option value="" {% if not selected_role_id %}selected{% endif %}>All Roles</option>
+                    {% for role in roles %}
+                        <option value="{{ role.id }}" {% if selected_role_id == role.id %}selected{% endif %}>{{ role.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Filter</button>
+        </form>
         
     </div>
 
