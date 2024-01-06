@@ -32,3 +32,13 @@ Apply database migrations to set up the required database:
 ```bash
 python manage.py migrate
 ```
+
+## Run the Development Server
+
+To run the development server, execute the following commands:
+
+```bash
+python manage.py runserver
+```
+
+
