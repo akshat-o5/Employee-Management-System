@@ -1,3 +1,5 @@
+from django.views.decorators.csrf import csrf_exempt
+
 from django.http import HttpResponse
 from django.shortcuts import render
 from .models import Emp, Role, Dept
@@ -44,7 +46,7 @@ def all_emp(request):
 #     return render(request, 'add_emp.html', context)
 
 
-
+@csrf_exempt
 def add_emp(request):
     if request.method == 'POST':
         # Retrieve data from the form
@@ -133,7 +135,7 @@ def add_emp(request):
     return render(request, 'add_emp.html', context)
 
 
-
+@csrf_exempt
 def remove_emp(request, emp_id=0):
     if emp_id:
         try:
@@ -150,7 +152,7 @@ def remove_emp(request, emp_id=0):
 
 
 
-
+@csrf_exempt
 def filter_emp(request):
     if request.method == 'POST':
         # Retrieve data from the form
